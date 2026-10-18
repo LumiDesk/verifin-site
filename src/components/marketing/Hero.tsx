@@ -69,7 +69,7 @@ export function Hero() {
               Android · 完全免费 · 本地优先
             </Badge>
 
-            <h1 className="mt-6 text-[2.5rem] leading-[1.08] font-extrabold tracking-[-0.035em] text-balance text-ink sm:text-[3.5rem] lg:text-[4rem]">
+            <h1 className="mt-6 text-[2.5rem] leading-[1.08] font-extrabold tracking-[-0.035em] text-balance text-ink sm:text-[3.5rem] xl:text-[4rem]">
               把账记清楚，
               <br />
               <span className="text-brand">把数据留给自己。</span>
