@@ -12,7 +12,7 @@ interface ButtonStyles {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-brand text-white shadow-[0_10px_24px_-12px_rgb(52_110_219_/_0.75)] hover:bg-brand-strong hover:shadow-[0_14px_28px_-12px_rgb(52_110_219_/_0.7)]',
+    'bg-action text-white shadow-[0_10px_24px_-12px_rgb(52_110_219_/_0.75)] hover:bg-action-strong hover:shadow-[0_14px_28px_-12px_rgb(52_110_219_/_0.7)]',
   secondary: 'border border-line bg-surface text-ink hover:border-ink/20 hover:bg-ice',
   ghost: 'text-ink hover:bg-ink/5',
 }

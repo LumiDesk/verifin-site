@@ -38,7 +38,7 @@ export function OpenSourceSection() {
           </article>
 
           <article className="flex flex-col rounded-panel border border-line bg-surface p-7 sm:p-9">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#faf0e6] text-[#a5642f]">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-coffee-soft text-coffee">
               <Coffee className="h-5 w-5" aria-hidden="true" />
             </span>
             <h3 className="mt-6 text-xl font-bold tracking-[-0.02em] text-ink">支持它继续更新</h3>

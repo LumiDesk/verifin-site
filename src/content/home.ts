@@ -38,21 +38,25 @@ export const importSources = [
 
 export const screenshots = [
   {
-    src: '/screenshots/home.jpg',
+    name: 'home',
     alt: 'Veri Fin 首页：本月支出、最近交易与快捷记账',
     label: '首页',
     description: '本月支出、最近交易和快捷记账',
   },
   {
-    src: '/screenshots/assets.jpg',
+    name: 'assets',
     alt: 'Veri Fin 资产页：净资产、账户与信用账户',
     label: '资产',
     description: '净资产、账户分组与信用账户',
   },
   {
-    src: '/screenshots/reports.jpg',
+    name: 'reports',
     alt: 'Veri Fin 看板页：本月收支、预算与分类排行',
     label: '看板',
     description: '收支、预算执行与分类排行',
   },
 ] as const
+
+export function screenshotSrc(name: (typeof screenshots)[number]['name'], theme: 'light' | 'dark') {
+  return `/screenshots/${name}-${theme}.jpg`
+}

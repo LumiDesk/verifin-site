@@ -7,6 +7,7 @@ import { ButtonLink } from '../ui/Button'
 import { Container } from '../ui/Container'
 import { GitHubIcon } from '../ui/GitHubIcon'
 import { Logo } from '../ui/Logo'
+import { ThemeToggle } from '../ui/ThemeToggle'
 import { MobileNav } from './MobileNav'
 
 export function Header() {
@@ -36,7 +37,7 @@ export function Header() {
               <Link
                 key={item.href}
                 to={item.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-white hover:text-ink"
+                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-ice hover:text-ink"
               >
                 {item.label}
               </Link>
@@ -44,12 +45,13 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
             <a
               href={site.github}
               target="_blank"
               rel="noreferrer"
               aria-label="在 GitHub 查看 Veri Fin"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-white hover:text-ink"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full text-muted transition-colors hover:bg-ice hover:text-ink"
             >
               <GitHubIcon className="h-[1.1rem] w-[1.1rem]" />
             </a>
@@ -59,6 +61,7 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             <ButtonLink
               href={site.releases}
               target="_blank"
@@ -73,7 +76,7 @@ export function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="打开导航菜单"
               aria-expanded={menuOpen}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-white"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ice"
             >
               <Menu className="h-5 w-5" aria-hidden="true" />
             </button>

@@ -1,22 +1,28 @@
 @import '@fontsource-variable/inter';
 @import 'tailwindcss';
 
-@theme {
-  --color-canvas: #f7f8f6;
-  --color-surface: #ffffff;
-  --color-ink: #151922;
-  --color-muted: #5f6878;
-  --color-line: #e4e9f1;
-  --color-brand: #346edb;
-  --color-brand-strong: #2457be;
-  --color-sky: #49b1f5;
-  --color-mint: #00c4b6;
-  --color-iris: #7c53d0;
-  --color-ice: #eef4fb;
-  --color-income: #12b8a6;
-  --color-expense: #e84d6a;
-  --color-night: #101318;
-  --color-night-card: #1a1f27;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-action: var(--action);
+  --color-action-strong: var(--action-strong);
+  --color-sky: var(--sky);
+  --color-mint: var(--mint);
+  --color-mint-ink: var(--mint-ink);
+  --color-iris: var(--iris);
+  --color-ice: var(--ice);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --color-coffee: var(--coffee);
+  --color-coffee-soft: var(--coffee-soft);
+  --color-night: var(--night);
+  --color-night-card: var(--night-card);
 
   --font-sans:
     'Inter Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC',
@@ -52,11 +58,59 @@
   }
 }
 
+:root {
+  --canvas: #f7f8f6;
+  --surface: #ffffff;
+  --ink: #151922;
+  --muted: #5f6878;
+  --line: #e4e9f1;
+  --brand: #346edb;
+  --action: #346edb;
+  --action-strong: #2457be;
+  --sky: #49b1f5;
+  --mint: #00c4b6;
+  --mint-ink: #087a70;
+  --iris: #7c53d0;
+  --ice: #eef4fb;
+  --income: #12b8a6;
+  --expense: #e84d6a;
+  --coffee: #a5642f;
+  --coffee-soft: #faf0e6;
+  --night: #101318;
+  --night-card: #1a1f27;
+}
+
+.dark {
+  --canvas: #0d1117;
+  --surface: #151a22;
+  --ink: #f2f5f9;
+  --muted: #9aa5b4;
+  --line: #29313d;
+  --brand: #7aa3f5;
+  --action: #2f66d0;
+  --action-strong: #3b76e8;
+  --sky: #6cc4ff;
+  --mint: #2dd4bf;
+  --mint-ink: #5eead4;
+  --iris: #a78bfa;
+  --ice: #1b2431;
+  --income: #34d3c1;
+  --expense: #ff7189;
+  --coffee: #e8b27b;
+  --coffee-soft: #352718;
+  --night: #070a0f;
+  --night-card: #121821;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
     color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
@@ -70,8 +124,12 @@
     background: rgb(52 110 219 / 0.16);
   }
 
+  .dark ::selection {
+    background: rgb(122 163 245 / 0.28);
+  }
+
   :focus-visible {
-    outline: 2px solid var(--color-brand);
+    outline: 2px solid var(--brand);
     outline-offset: 3px;
   }
 
@@ -86,6 +144,13 @@
     radial-gradient(58% 58% at 14% 8%, rgb(73 177 245 / 0.16), transparent 72%),
     radial-gradient(52% 52% at 88% 12%, rgb(124 83 208 / 0.1), transparent 72%),
     radial-gradient(48% 48% at 58% 82%, rgb(0 196 182 / 0.08), transparent 70%);
+}
+
+.dark .hero-atmosphere {
+  background:
+    radial-gradient(58% 58% at 14% 8%, rgb(73 177 245 / 0.14), transparent 72%),
+    radial-gradient(52% 52% at 88% 12%, rgb(124 83 208 / 0.13), transparent 72%),
+    radial-gradient(48% 48% at 58% 82%, rgb(0 196 182 / 0.1), transparent 70%);
 }
 
 details[open] .faq-chevron {

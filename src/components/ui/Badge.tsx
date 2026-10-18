@@ -5,7 +5,7 @@ type BadgeTone = 'default' | 'mint' | 'night'
 
 const toneClasses: Record<BadgeTone, string> = {
   default: 'border-line bg-surface text-muted',
-  mint: 'border-mint/20 bg-mint/10 text-[#087a70]',
+  mint: 'border-mint/20 bg-mint/10 text-mint-ink',
   night: 'border-white/10 bg-white/[0.06] text-white/70',
 }
 

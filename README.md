@@ -57,6 +57,8 @@ src/
 - 隐私政策与用户协议：`src/content/legal.ts`
 - 视觉令牌：`src/styles/index.css`
 
+右上角支持“跟随系统 / 浅色 / 深色”三档主题，默认跟随系统；首屏和界面区块会随主题切换对应的应用截图。
+
 法务文本来自 Veri Fin 应用内 `lib/app/legal_content.dart`，当前生效日期为 `2026-09-08`。如应用内文本更新，需要同步该文件并更新 `legalUpdatedAt`。
 
 ## GitHub Releases

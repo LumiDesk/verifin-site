@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { navItems, site } from '../../content/site'
 import { ButtonLink } from '../ui/Button'
 import { Logo } from '../ui/Logo'
+import { ThemeToggle } from '../ui/ThemeToggle'
 
 interface MobileNavProps {
   open: boolean
@@ -43,14 +44,17 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       <div className="flex min-h-dvh flex-col">
         <div className="flex h-16 items-center justify-between px-5">
           <Logo onClick={onClose} />
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="关闭导航菜单"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5"
-          >
-            <X className="h-5 w-5" aria-hidden="true" />
-          </button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="关闭导航菜单"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5"
+            >
+              <X className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </div>
         </div>
 
         <nav className="flex flex-1 flex-col gap-1 px-5 pt-6" aria-label="移动端导航">
@@ -59,7 +63,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               key={item.href}
               to={item.href}
               onClick={onClose}
-              className="rounded-2xl px-4 py-4 text-2xl font-semibold tracking-[-0.02em] transition-colors hover:bg-white"
+              className="rounded-2xl px-4 py-4 text-2xl font-semibold tracking-[-0.02em] transition-colors hover:bg-ice"
             >
               {item.label}
             </Link>
@@ -69,7 +73,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             target="_blank"
             rel="noreferrer"
             onClick={onClose}
-            className="rounded-2xl px-4 py-4 text-2xl font-semibold tracking-[-0.02em] transition-colors hover:bg-white"
+            className="rounded-2xl px-4 py-4 text-2xl font-semibold tracking-[-0.02em] transition-colors hover:bg-ice"
           >
             GitHub
           </a>

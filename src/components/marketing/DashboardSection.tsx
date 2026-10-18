@@ -41,7 +41,7 @@ export function DashboardSection() {
               className="absolute top-1/2 left-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(73_177_245_/_0.18),transparent_68%)]"
             />
             <PhoneFrame
-              src="/screenshots/reports.jpg"
+              src="/screenshots/reports-dark.jpg"
               alt="Veri Fin 看板页：本月收支、预算与分类排行"
               className="relative z-10 mx-auto w-[250px] ring-1 ring-white/10 sm:w-[280px]"
             />

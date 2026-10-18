@@ -1,5 +1,6 @@
 import { ArrowDown, Coins, Database, Download, ShieldCheck } from 'lucide-react'
 import { site } from '../../content/site'
+import { useTheme } from '../../features/theme/theme-context'
 import { Badge } from '../ui/Badge'
 import { ButtonLink } from '../ui/Button'
 import { Container } from '../ui/Container'
@@ -7,25 +8,30 @@ import { BrandBackdrop } from './BrandBackdrop'
 import { PhoneFrame } from './PhoneFrame'
 
 function PhoneShowcase() {
+  const { resolvedTheme } = useTheme()
+
   return (
     <div className="relative mx-auto mt-6 w-full max-w-[570px] sm:mt-0">
       <div className="absolute top-1/2 left-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(73_177_245_/_0.2),rgb(238_244_251_/_0)_68%)] sm:h-[500px] sm:w-[500px]" />
 
       <div className="relative mx-auto flex min-h-[570px] max-w-[560px] items-center justify-center sm:min-h-[620px]">
         <div className="absolute top-28 left-0 hidden w-[168px] -rotate-[9deg] opacity-90 md:block">
-          <PhoneFrame src="/screenshots/assets.jpg" alt="Veri Fin 资产页：净资产、账户与信用账户" />
+          <PhoneFrame
+            src={`/screenshots/assets-${resolvedTheme}.jpg`}
+            alt="Veri Fin 资产页：净资产、账户与信用账户"
+          />
         </div>
 
         <div className="absolute top-24 right-0 hidden w-[168px] rotate-[8deg] opacity-90 md:block">
           <PhoneFrame
-            src="/screenshots/reports.jpg"
+            src={`/screenshots/reports-${resolvedTheme}.jpg`}
             alt="Veri Fin 看板页：本月收支、预算与分类排行"
           />
         </div>
 
         <div className="relative z-10 w-[250px] animate-float sm:w-[280px] lg:w-[292px]">
           <PhoneFrame
-            src="/screenshots/home.jpg"
+            src={`/screenshots/home-${resolvedTheme}.jpg`}
             alt="Veri Fin 首页：本月支出、最近交易与快捷记账"
             priority
           />
