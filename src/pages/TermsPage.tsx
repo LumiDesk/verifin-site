@@ -1,10 +1,18 @@
+import { legalUpdatedAt, userAgreement } from '../content/legal'
 import { LegalPage } from './LegalPage'
 
 export function TermsPage() {
   return (
-    <LegalPage title="用户协议">
-      <p>正式用户协议将复用 Veri Fin App 内已发布的版本，当前页面为开发占位。</p>
-      <p>在正式上线前，本页会替换为完整、可核对的协议文本。</p>
+    <LegalPage title={userAgreement.title} updatedAt={legalUpdatedAt}>
+      <div className="space-y-8">
+        <p className="text-sm leading-7 text-muted">本页内容与 Veri Fin 应用内发布的版本一致。</p>
+        {userAgreement.sections.map((section) => (
+          <section key={section.heading}>
+            <h2 className="text-lg font-bold tracking-[-0.02em] text-ink">{section.heading}</h2>
+            <p className="mt-3 text-sm leading-7 whitespace-pre-line text-muted">{section.body}</p>
+          </section>
+        ))}
+      </div>
     </LegalPage>
   )
 }

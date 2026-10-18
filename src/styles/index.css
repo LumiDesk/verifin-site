@@ -88,6 +88,10 @@
     radial-gradient(48% 48% at 58% 82%, rgb(0 196 182 / 0.08), transparent 70%);
 }
 
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

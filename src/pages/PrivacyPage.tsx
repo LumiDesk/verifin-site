@@ -1,10 +1,20 @@
+import { legalUpdatedAt, privacyPolicy } from '../content/legal'
 import { LegalPage } from './LegalPage'
 
 export function PrivacyPage() {
   return (
-    <LegalPage title="隐私政策">
-      <p>正式隐私政策将复用 Veri Fin App 内已发布的版本，当前页面为开发占位。</p>
-      <p>在正式上线前，本页会替换为完整、可核对的隐私说明。</p>
+    <LegalPage title={privacyPolicy.title} updatedAt={legalUpdatedAt}>
+      <div className="space-y-8">
+        <p className="text-sm leading-7 text-muted">
+          本页内容与 Veri Fin 应用内发布的版本一致，便于在下载前核对数据如何处理。
+        </p>
+        {privacyPolicy.sections.map((section) => (
+          <section key={section.heading}>
+            <h2 className="text-lg font-bold tracking-[-0.02em] text-ink">{section.heading}</h2>
+            <p className="mt-3 text-sm leading-7 whitespace-pre-line text-muted">{section.body}</p>
+          </section>
+        ))}
+      </div>
     </LegalPage>
   )
 }

@@ -29,8 +29,11 @@ export interface GitHubRelease {
   assets: GitHubReleaseAsset[]
 }
 
-export async function getLatestRelease(): Promise<GitHubRelease> {
-  const { data } = await githubApi.get<GitHubRelease>(`/repos/${GITHUB_REPOSITORY}/releases/latest`)
+export async function getLatestRelease(signal?: AbortSignal): Promise<GitHubRelease> {
+  const { data } = await githubApi.get<GitHubRelease>(
+    `/repos/${GITHUB_REPOSITORY}/releases/latest`,
+    { signal },
+  )
 
   return data
 }
