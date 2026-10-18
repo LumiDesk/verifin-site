@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: 'Veri Fin 支持哪些平台？',
     answer:
-      '目前只正式交付 Android 应用。官网提供的 GitHub Releases 安装包为 arm64-v8a APK；如果你使用 Google Play 渠道，安装包会按设备架构分发（以实际上架状态为准）。',
+      '目前只正式交付 Android 应用。官网提供的 GitHub Releases 安装包为 arm64-v8a APK；如果后续通过 Google Play 分发，安装包会按设备架构分发（以实际上架状态为准）。',
   },
   {
     question: '真的完全免费吗？',

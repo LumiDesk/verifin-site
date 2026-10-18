@@ -13,11 +13,11 @@ function DataFlow() {
         </span>
         <div>
           <p className="text-sm font-semibold text-white">你的手机</p>
-          <p className="mt-0.5 text-xs text-white/45">本地 SQLite · 附件文件</p>
+          <p className="mt-0.5 text-xs text-white/60">本地 SQLite · 附件文件</p>
         </div>
       </div>
 
-      <div className="my-5 flex items-center gap-3 text-[0.68rem] text-white/35">
+      <div className="my-5 flex items-center gap-3 text-[0.68rem] text-white/55">
         <span className="h-px flex-1 border-t border-dashed border-white/15" />
         仅在你主动开启时
         <span className="h-px flex-1 border-t border-dashed border-white/15" />
@@ -27,16 +27,16 @@ function DataFlow() {
         <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
           <Cloud className="h-4 w-4 text-sky" aria-hidden="true" />
           <p className="mt-3 text-sm font-semibold text-white">WebDAV 备份</p>
-          <p className="mt-1 text-xs leading-5 text-white/45">你选择的目录与口令</p>
+          <p className="mt-1 text-xs leading-5 text-white/60">你选择的目录与口令</p>
         </div>
         <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
           <Sparkles className="h-4 w-4 text-iris" aria-hidden="true" />
           <p className="mt-3 text-sm font-semibold text-white">AI 服务</p>
-          <p className="mt-1 text-xs leading-5 text-white/45">你自己配置的兼容端点</p>
+          <p className="mt-1 text-xs leading-5 text-white/60">你自己配置的兼容端点</p>
         </div>
       </div>
 
-      <p className="mt-4 text-xs leading-6 text-white/40">
+      <p className="mt-4 text-xs leading-6 text-white/60">
         截图文字在本机离线识别，原图不上传；AI 只收到必要的识别文本或账目摘要。
       </p>
     </div>
@@ -93,7 +93,7 @@ export function PrivacySection() {
                 <p className="text-3xl font-extrabold tracking-[-0.04em] text-mint sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs text-white/45">{stat.label}</p>
+                <p className="mt-1 text-xs text-white/60">{stat.label}</p>
               </div>
             ))}
           </div>

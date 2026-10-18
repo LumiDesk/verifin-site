@@ -47,13 +47,13 @@ export function DashboardSection() {
             />
 
             <div className="absolute top-16 -left-2 z-20 hidden rounded-2xl border border-white/10 bg-night-card/95 px-4 py-3 shadow-phone sm:block">
-              <p className="text-[0.68rem] font-medium text-white/45">本月结余</p>
+              <p className="text-[0.68rem] font-medium text-white/55">本月结余</p>
               <p className="mt-1 text-lg font-bold text-income">+9,003.20</p>
             </div>
 
             <div className="absolute bottom-24 -left-3 z-20 hidden w-[172px] rounded-2xl border border-white/10 bg-night-card/95 px-4 py-3 shadow-phone sm:block">
               <div className="flex items-center justify-between gap-4">
-                <p className="text-[0.68rem] font-medium text-white/45">预算已用</p>
+                <p className="text-[0.68rem] font-medium text-white/55">预算已用</p>
                 <p className="text-xs font-semibold text-expense">130%</p>
               </div>
               <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10">
@@ -62,7 +62,7 @@ export function DashboardSection() {
             </div>
 
             <div className="absolute right-6 bottom-10 z-20 hidden rounded-2xl border border-white/10 bg-night-card/95 px-4 py-3 shadow-phone sm:block">
-              <p className="text-[0.68rem] font-medium text-white/45">净资产</p>
+              <p className="text-[0.68rem] font-medium text-white/55">净资产</p>
               <p className="mt-1 text-lg font-bold text-white">57,930.60</p>
             </div>
           </div>

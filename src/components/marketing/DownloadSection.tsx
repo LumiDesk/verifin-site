@@ -32,7 +32,7 @@ export function DownloadSection() {
               <br />
               <span className="text-mint">从这里开始。</span>
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/60">
+            <p className="mt-5 max-w-xl text-base leading-8 text-white/70">
               完全免费，下载即用。无需注册，也没有广告；账本从第一天起就保存在你自己的手机里。
             </p>
 
@@ -57,7 +57,7 @@ export function DownloadSection() {
               </ButtonLink>
             </div>
 
-            <p className="mt-4 text-sm text-white/40" aria-live="polite">
+            <p className="mt-4 text-sm text-white/60" aria-live="polite">
               {versionDetail}
             </p>
           </div>
@@ -73,36 +73,36 @@ export function DownloadSection() {
               />
               <div>
                 <p className="text-base font-semibold text-white">Veri Fin for Android</p>
-                <p className="mt-1 text-xs text-white/40">本地优先 · 完全免费</p>
+                <p className="mt-1 text-xs text-white/60">本地优先 · 完全免费</p>
               </div>
             </div>
 
             <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6">
               <div>
-                <dt className="text-xs text-white/35">最新稳定版</dt>
+                <dt className="text-xs text-white/55">最新稳定版</dt>
                 <dd className="mt-1.5 text-sm font-semibold text-white">
                   {release?.tag_name ?? (status === 'loading' ? '读取中…' : '—')}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs text-white/35">发布时间</dt>
+                <dt className="text-xs text-white/55">发布时间</dt>
                 <dd className="mt-1.5 text-sm font-semibold text-white">
                   {release ? formatDate(release.published_at) : '—'}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs text-white/35">安装包</dt>
+                <dt className="text-xs text-white/55">安装包</dt>
                 <dd className="mt-1.5 text-sm font-semibold text-white">
                   {asset ? formatBytes(asset.size) : 'GitHub Releases'}
                 </dd>
               </div>
               <div>
-                <dt className="text-xs text-white/35">架构</dt>
+                <dt className="text-xs text-white/55">架构</dt>
                 <dd className="mt-1.5 text-sm font-semibold text-white">arm64-v8a</dd>
               </div>
             </dl>
 
-            <p className="mt-7 flex items-start gap-2 text-xs leading-6 text-white/40">
+            <p className="mt-7 flex items-start gap-2 text-xs leading-6 text-white/55">
               <Smartphone className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
               GitHub 自分发版只提供 arm64-v8a APK；极老的 32 位设备无法安装。
             </p>

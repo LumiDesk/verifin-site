@@ -91,7 +91,7 @@ export function Hero() {
               </ButtonLink>
             </div>
 
-            <p className="mt-5 text-sm text-muted">无需注册 · 无需联网 · 无广告</p>
+            <p className="mt-5 text-sm text-muted">无需注册 · 离线记账 · 无广告</p>
           </div>
 
           <PhoneShowcase />
