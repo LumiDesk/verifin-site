@@ -49,7 +49,7 @@ export function MenuPopover({
       if (event.key === 'Escape') {
         event.preventDefault()
         setOpen(false)
-        requestAnimationFrame(() => triggerRef.current?.focus())
+        requestAnimationFrame(() => triggerRef.current?.focus({ preventScroll: true }))
       }
     }
 
@@ -58,7 +58,7 @@ export function MenuPopover({
 
     const frame = requestAnimationFrame(() => {
       const items = menuRef.current?.querySelectorAll<HTMLButtonElement>('[role="menuitemradio"]')
-      items?.[selectedIndex]?.focus()
+      items?.[selectedIndex]?.focus({ preventScroll: true })
     })
 
     return () => {
@@ -136,7 +136,7 @@ export function MenuPopover({
                 onClick={() => {
                   onSelect(option.value)
                   setOpen(false)
-                  requestAnimationFrame(() => triggerRef.current?.focus())
+                  requestAnimationFrame(() => triggerRef.current?.focus({ preventScroll: true }))
                 }}
                 className={cn(
                   'flex w-full items-center gap-2.5 rounded-xl px-3 py-2 text-left text-sm transition-colors hover:bg-ice focus-visible:bg-ice',

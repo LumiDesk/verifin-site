@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { LocaleProvider } from '../../features/locale/LocaleProvider'
 import { useContent } from '../../features/locale/useContent'
+import { CustomScrollbar } from '../ui/CustomScrollbar'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
@@ -54,6 +55,7 @@ function SiteShell() {
       </main>
       <Footer />
       <ScrollManager />
+      <CustomScrollbar />
     </div>
   )
 }

@@ -106,9 +106,8 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
-    scrollbar-gutter: stable;
-    scrollbar-color: color-mix(in srgb, var(--muted) 34%, transparent) transparent;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     color-scheme: light;
   }
 
@@ -133,25 +132,8 @@
     text-wrap: balance;
   }
 
-  ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border: 3px solid transparent;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--muted) 34%, transparent);
-    background-clip: content-box;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, var(--muted) 54%, transparent);
-    background-clip: content-box;
+  html::-webkit-scrollbar {
+    display: none;
   }
 
   ::selection {
@@ -205,9 +187,23 @@ details[open] > p {
   height: 6px;
 }
 
+.screens-rail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .screens-rail::-webkit-scrollbar-thumb {
   border: 0;
   background: color-mix(in srgb, var(--muted) 24%, transparent);
+}
+
+.custom-scrollbar {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 768px) {
+  .custom-scrollbar {
+    display: block;
+  }
 }
 
 .menu-pop {
