@@ -9,6 +9,12 @@ import {
   withLocale,
 } from '../i18n/routing'
 
+const openGraphImages = {
+  zh: '/og-image.png',
+  en: '/og-image-en.png',
+  ja: '/og-image-ja.png',
+} as const
+
 interface PageMetaInput {
   title: string
   description: string
@@ -43,8 +49,11 @@ export function usePageMeta({ title, description, path }: PageMetaInput) {
     setPropertyContent('og:description', description)
     setPropertyContent('og:url', url)
     setPropertyContent('og:locale', openGraphLocales[locale])
+    setPropertyContent('og:image', absoluteUrl(openGraphImages[locale]))
+    setPropertyContent('og:image:alt', title)
     setMetaContent('twitter:title', title)
     setMetaContent('twitter:description', description)
+    setMetaContent('twitter:image', absoluteUrl(openGraphImages[locale]))
 
     document.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.setAttribute('href', url)
 

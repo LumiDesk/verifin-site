@@ -84,8 +84,7 @@ export function Hero() {
             </Badge>
 
             <h1 className="mt-6 text-[2.5rem] leading-[1.08] font-extrabold tracking-[-0.035em] text-balance text-ink sm:text-[3.5rem] xl:text-[4rem]">
-              {content.hero.titleLead}
-              <br />
+              {content.hero.titleLead} <br />
               <span className="text-brand">{content.hero.titleAccent}</span>
             </h1>
 

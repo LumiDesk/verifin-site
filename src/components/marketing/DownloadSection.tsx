@@ -36,8 +36,7 @@ export function DownloadSection() {
               {content.download.eyebrow}
             </p>
             <h2 className="mt-3 text-[2rem] leading-[1.12] font-extrabold tracking-[-0.035em] text-balance text-white sm:text-[2.75rem] lg:text-[3.25rem]">
-              {content.download.titleLead}
-              <br />
+              {content.download.titleLead} <br />
               <span className="text-mint">{content.download.titleAccent}</span>
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-white/70">
