@@ -1,6 +1,6 @@
 # Veri Fin 官网
 
-Veri Fin 的官方网站：介绍产品、说明隐私与数据策略，并提供最新 Android 版本下载。
+Veri Fin 的官方网站：介绍产品、说明隐私与数据策略，并提供最新 Android 版本下载。支持简体中文、英文和日文。
 
 线上地址：<https://verifin.talyra42.top>
 
@@ -42,8 +42,11 @@ src/
 │   ├── layout/          # Header、Footer、MobileNav、页面骨架
 │   ├── marketing/       # 首页各区块
 │   └── ui/              # Button、Container、Section 等基础组件
-├── content/             # 站点文案、FAQ、法务文本、截图元数据
+├── content/             # 三语文案、FAQ、法务文本、内容类型
+│   └── locales/         # zh.ts、en.ts、ja.ts
+├── features/locale/     # 语言上下文与 useContent
 ├── features/releases/   # GitHub Releases 获取、缓存与 APK 选择
+├── i18n/                # 语言类型与路径工具
 ├── lib/                 # axios 客户端、格式化、className 工具
 ├── pages/               # 首页、隐私政策、用户协议、404
 └── styles/              # Tailwind 入口与设计令牌
@@ -52,14 +55,18 @@ src/
 ## 内容维护
 
 - 站点链接和基础信息：`src/content/site.ts`
-- 首页功能与截图文案：`src/content/home.ts`
-- FAQ：`src/content/faqs.ts`
-- 隐私政策与用户协议：`src/content/legal.ts`
+- 三语完整文案：`src/content/locales/zh.ts`、`en.ts`、`ja.ts`
+- 内容结构与校验类型：`src/content/types.ts`
+- 截图路径与明暗版本：`src/content/screenshots.ts`
 - 视觉令牌：`src/styles/index.css`
 
-右上角支持“跟随系统 / 浅色 / 深色”三档主题，默认跟随系统；首屏和界面区块会随主题切换对应的应用截图。
+右上角支持“语言”和“跟随系统 / 浅色 / 深色”三档主题。语言使用路径前缀：中文 `/`、英文 `/en`、日文 `/ja`；切换语言会保留当前页面，并记住偏好。
+
+首屏和界面区块会随主题切换对应的应用截图。`PhoneFrame` 会在新图预加载完成后交叉淡出旧图，并使用 590px / 1180px 两档响应式图片。
 
 法务文本来自 Veri Fin 应用内 `lib/app/legal_content.dart`，当前生效日期为 `2026-09-08`。如应用内文本更新，需要同步该文件并更新 `legalUpdatedAt`。
+
+英文和日文法务文本为翻译稿，页面会提示以应用内中文原文为准。修改中文法务条款时必须同步三种语言。
 
 ## GitHub Releases
 
@@ -86,6 +93,10 @@ Output directory: dist
 ```
 
 `vercel.json` 已配置无扩展名路径回退到 `index.html`，用于直接访问 `/privacy`、`/terms` 和 404 路由。其他静态资源不受影响。
+
+各语言页面会动态更新 `html lang`、标题、描述、canonical、OG 和 hreflang；`public/sitemap.xml` 需要同步新增语言或页面。
+
+分享卡按语言使用 `og-image.png`、`og-image-en.png`、`og-image-ja.png`。
 
 ## 提交规范
 
