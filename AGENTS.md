@@ -80,7 +80,7 @@ src/
 
 - 组件只负责展示和交互，文案优先放到 `src/content/`。
 - 新增功能先找现有 `ui` 组件和设计令牌，避免复制样式或引入组件库。
-- 首版不做 i18n 切换，但文案已集中，后续英文版应增量补充内容，不重写组件。
+- 三语文案必须同步维护，不要在组件里写死中文；新增文案先补 `src/content/types.ts` 和三个 locale。
 
 ## 路由与页面
 
@@ -125,7 +125,14 @@ src/
 - 主题切换在支持的浏览器中使用 View Transition 交叉淡入；必须尊重 `prefers-reduced-motion`。
 - 主题状态通过 `src/features/theme/theme-context.ts` 的 `useTheme()` 获取。
 - 所有新增界面必须在浅色和深色下都检查。
-- 全局滚动条、横向截图轨道和菜单/弹层动效都在 `src/styles/index.css`，新增交互不要另造一套。
+- 横向截图轨道和菜单/弹层动效都在 `src/styles/index.css`，新增交互不要另造一套。
+
+自绘滚动条：
+
+- 页面竖向滚动条由 `src/components/ui/CustomScrollbar.tsx` 实现，原生滚动条已隐藏。
+- 滚动位置计算在 `src/lib/scrollbar.ts`，支持拖拽、点击轨道、方向键/PageUp/PageDown/Home/End。
+- 组件通过 `aria-controls="main"` 绑定主内容，修改页面骨架时保留 `main#main`。
+- 触屏设备或宽度小于 768px 时不显示自绘条，避免与系统手势冲突；不要改回原生滚动条。
 
 动画与布局：
 
@@ -173,20 +180,27 @@ src/
 - 英文/日文法务文本是翻译稿，页面必须显示“以中文原文为准”的说明；修改中文法务时必须同步三语。
 - 已知待核对项：隐私政策仍写“JSON 备份文件”，而当前应用说明使用 zip / `.verifin`；未经用户确认不要擅自修改。
 
-## GitHub Releases 下载
+## 下载来源与 GitHub Releases
 
 相关文件：
 
 - `src/lib/github.ts`：axios 实例与类型
 - `src/features/releases/useLatestRelease.ts`：请求、缓存、APK 选择
 - `src/components/marketing/DownloadSection.tsx`：下载 UI
+- `src/content/site.ts`：GitHub 与蒲公英链接
+
+下载来源：
+
+- 当前提供 GitHub Releases 和蒲公英（`https://www.pgyer.com/verifin`）两个入口。
+- 下载卡文案在 `content.download.sources`，链接映射在 `DownloadSection.tsx` 的 `sourceLinks`；新增来源时同步三语、`DownloadSourceId`、链接映射和卡片样式。
+- 蒲公英作为国内分发页，不声称是官方镜像；版本与安装包信息以对应来源页面为准。
 
 逻辑：
 
 1. 请求 `https://api.github.com/repos/LumiDesk/verifin/releases/latest`
 2. 优先选择名字含 `arm64` 的 `.apk`，否则选择任意 `.apk`
 3. 结果写入 `sessionStorage`，TTL 10 分钟
-4. 失败或没有 APK 时回退到 `https://github.com/LumiDesk/verifin/releases/latest`
+4. API 失败或没有 APK 时只影响版本信息展示；GitHub 下载入口仍指向 Releases 页面，不空屏
 
 注意：
 

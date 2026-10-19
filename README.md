@@ -64,13 +64,22 @@ src/
 
 首屏和界面区块会随主题切换对应的应用截图。`PhoneFrame` 会在新图预加载完成后交叉淡出旧图，并使用 590px / 1180px 两档响应式图片。
 
+页面竖向滚动条使用 `CustomScrollbar` 自绘，支持拖拽、轨道点击、键盘方向键/PageUp/PageDown/Home/End；触屏和小于 768px 的布局不显示自绘条。
+
 法务文本来自 Veri Fin 应用内 `lib/app/legal_content.dart`，当前生效日期为 `2026-09-08`。如应用内文本更新，需要同步该文件并更新 `legalUpdatedAt`。
 
 英文和日文法务文本为翻译稿，页面会提示以应用内中文原文为准。修改中文法务条款时必须同步三种语言。
 
-## GitHub Releases
+## 下载来源与 GitHub Releases
 
-下载区通过 axios 请求：
+下载区提供两个入口：
+
+- 国内下载：[蒲公英](https://www.pgyer.com/verifin)
+- 全球下载：[GitHub Releases](https://github.com/LumiDesk/verifin/releases)
+
+新增来源时，在 `src/content/locales/*.ts` 的 `download.sources` 增加文案，并在 `DownloadSection.tsx` 中补充 ID、链接和图标映射。
+
+GitHub 版本信息通过 axios 请求：
 
 ```text
 GET https://api.github.com/repos/LumiDesk/verifin/releases/latest
@@ -80,7 +89,7 @@ GET https://api.github.com/repos/LumiDesk/verifin/releases/latest
 
 - 优先选择名字包含 `arm64` 的 `.apk`，否则选择任意 `.apk`；
 - 结果缓存到 `sessionStorage` 10 分钟；
-- 请求失败或没有 APK 时回退到 GitHub Releases 页面；
+- 请求失败或没有 APK 时显示提示，GitHub 下载入口仍可用，不因 API 失败空屏；
 - 不在前端放置 GitHub Token。
 
 ## 部署
@@ -114,4 +123,5 @@ chore: 更新依赖
 
 - [Veri Fin 应用仓库](https://github.com/LumiDesk/verifin)
 - [GitHub Releases](https://github.com/LumiDesk/verifin/releases)
+- [蒲公英国内下载](https://www.pgyer.com/verifin)
 - [问题反馈](https://github.com/LumiDesk/verifin/issues)
