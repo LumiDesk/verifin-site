@@ -1,5 +1,5 @@
 import { Calculator, ScanLine, Sparkles } from 'lucide-react'
-import { quickFeatures } from '../../content/home'
+import { useContent } from '../../features/locale/useContent'
 import { Container } from '../ui/Container'
 import { Section } from '../ui/Section'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -11,22 +11,24 @@ const icons = {
 }
 
 export function QuickFeaturesSection() {
+  const content = useContent()
+
   return (
     <Section id="features">
       <Container>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="快速记账"
-            title="想到就记，三秒落账。"
-            description="把输入成本降到最低，才更愿意坚持记下去。"
+            eyebrow={content.quick.eyebrow}
+            title={content.quick.title}
+            description={content.quick.description}
           />
           <p className="max-w-sm text-sm leading-7 text-muted lg:pb-1 lg:text-right">
-            AI 记账与截图识账均为可选能力，需要你自己配置服务商；所有结果都会先进入待确认草稿。
+            {content.quick.note}
           </p>
         </div>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {quickFeatures.map((feature) => {
+          {content.quick.items.map((feature) => {
             const Icon = icons[feature.key]
 
             return (
@@ -42,7 +44,9 @@ export function QuickFeaturesSection() {
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{feature.description}</p>
                 <div className="mt-6 rounded-2xl border border-line bg-canvas px-4 py-3">
-                  <p className="text-[0.68rem] font-semibold tracking-[0.12em] text-muted">示例</p>
+                  <p className="text-[0.68rem] font-semibold tracking-[0.12em] text-muted">
+                    {content.quick.exampleLabel}
+                  </p>
                   <p className="mt-1 text-sm font-medium text-ink">{feature.example}</p>
                 </div>
               </article>

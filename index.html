@@ -17,6 +17,20 @@
     <meta name="google-site-verification" content="DXj_GmbTGxwWyYGPtu3zlujWiGuiPKp1ZPWd9pUhW1o" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <link rel="canonical" href="https://verifin.talyra42.top/" />
+    <link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://verifin.talyra42.top/"
+      data-hreflang="zh"
+    />
+    <link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en" data-hreflang="en" />
+    <link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja" data-hreflang="ja" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/"
+      data-hreflang="x-default"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:site_name" content="Veri Fin" />
@@ -67,10 +81,21 @@
       ;(() => {
         try {
           const stored = localStorage.getItem('verifin-site:theme')
+          const storedLocale = localStorage.getItem('verifin-site:locale')
           const dark =
             stored === 'dark' ||
             (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
 
+          if (
+            (storedLocale === 'en' || storedLocale === 'ja') &&
+            window.location.pathname === '/'
+          ) {
+            window.location.replace(`/${storedLocale}`)
+          }
+
+          const localeSegment = window.location.pathname.split('/')[1]
+          document.documentElement.lang =
+            localeSegment === 'en' ? 'en' : localeSegment === 'ja' ? 'ja' : 'zh-CN'
           document.documentElement.classList.toggle('dark', dark)
           document
             .querySelector('meta[name="theme-color"]')

@@ -1,4 +1,5 @@
-import { screenshotSrc, screenshots } from '../../content/home'
+import { screenshotSrc } from '../../content/screenshots'
+import { useContent } from '../../features/locale/useContent'
 import { useTheme } from '../../features/theme/theme-context'
 import { Container } from '../ui/Container'
 import { Section } from '../ui/Section'
@@ -7,19 +8,20 @@ import { PhoneFrame } from './PhoneFrame'
 
 export function ScreensSection() {
   const { resolvedTheme } = useTheme()
+  const content = useContent()
 
   return (
     <Section id="screens" tone="surface">
       <Container>
         <SectionHeading
           align="center"
-          eyebrow="界面"
-          title="真实界面，不靠想象。"
-          description="首页、资产与看板都是应用里实际使用的工作区，并会随站点主题切换明暗样式。"
+          eyebrow={content.screens.eyebrow}
+          title={content.screens.title}
+          description={content.screens.description}
         />
 
-        <div className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
-          {screenshots.map((screen) => (
+        <div className="screens-rail mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+          {content.screens.items.map((screen) => (
             <figure key={screen.label} className="w-[76%] shrink-0 snap-center md:w-auto">
               <PhoneFrame
                 src={screenshotSrc(screen.name, resolvedTheme)}

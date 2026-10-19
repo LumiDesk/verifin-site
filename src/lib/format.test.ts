@@ -8,6 +8,8 @@ describe('formatBytes', () => {
 
   it('handles missing size data', () => {
     expect(formatBytes(0)).toBe('未知大小')
+    expect(formatBytes(0, 'en')).toBe('Unknown size')
+    expect(formatBytes(0, 'ja')).toBe('不明なサイズ')
   })
 })
 
@@ -16,6 +18,11 @@ describe('formatDate', () => {
     expect(formatDate('2026-10-18T06:24:13Z')).toContain('2026')
     expect(formatDate('2026-10-18T06:24:13Z')).toContain('10')
     expect(formatDate('2026-10-18T06:24:13Z')).toContain('18')
+  })
+
+  it('formats dates with the active locale', () => {
+    expect(formatDate('2026-10-18T06:24:13Z', 'en')).toMatch(/October|Oct/)
+    expect(formatDate('2026-10-18T06:24:13Z', 'ja')).toContain('2026')
   })
 
   it('keeps invalid dates visible instead of throwing', () => {

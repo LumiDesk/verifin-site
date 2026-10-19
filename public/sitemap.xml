@@ -1,21 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
   <url>
     <loc>https://verifin.talyra42.top/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verifin.talyra42.top/" />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/en</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verifin.talyra42.top/" />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/ja</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://verifin.talyra42.top/" />
   </url>
   <url>
     <loc>https://verifin.talyra42.top/privacy</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://verifin.talyra42.top/privacy"
+    />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/privacy" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/privacy"
+    />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/en/privacy</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://verifin.talyra42.top/privacy"
+    />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/privacy" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/privacy"
+    />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/ja/privacy</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-CN"
+      href="https://verifin.talyra42.top/privacy"
+    />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/privacy" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/privacy"
+    />
   </url>
   <url>
     <loc>https://verifin.talyra42.top/terms</loc>
     <lastmod>2026-09-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/terms" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/terms" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/terms"
+    />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/en/terms</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/terms" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/terms" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/terms"
+    />
+  </url>
+  <url>
+    <loc>https://verifin.talyra42.top/ja/terms</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://verifin.talyra42.top/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://verifin.talyra42.top/en/terms" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://verifin.talyra42.top/ja/terms" />
+    <xhtml:link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://verifin.talyra42.top/terms"
+    />
   </url>
 </urlset>

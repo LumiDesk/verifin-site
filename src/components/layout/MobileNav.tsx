@@ -1,8 +1,12 @@
 import { X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { navItems, site } from '../../content/site'
+import { Link, useLocation } from 'react-router-dom'
+import { site } from '../../content/site'
+import { useContent } from '../../features/locale/useContent'
+import { useLocale } from '../../features/locale/locale-context'
+import { homePath } from '../../i18n/routing'
 import { ButtonLink } from '../ui/Button'
+import { LanguageToggle } from '../ui/LanguageToggle'
 import { Logo } from '../ui/Logo'
 import { ThemeToggle } from '../ui/ThemeToggle'
 
@@ -13,6 +17,17 @@ interface MobileNavProps {
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
+  const { pathname } = useLocation()
+  const { locale } = useLocale()
+  const content = useContent()
+  const home = homePath(locale)
+  const navItems = [
+    { label: content.nav.features, href: `${home}#features` },
+    { label: content.nav.privacy, href: `${home}#privacy` },
+    { label: content.nav.screens, href: `${home}#screens` },
+    { label: content.nav.faq, href: `${home}#faq` },
+    { label: content.nav.download, href: `${home}#download` },
+  ]
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -32,6 +47,12 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     }
   }, [open])
 
+  useEffect(() => {
+    onClose()
+    // Close the modal whenever navigation changes the route, including language switches.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
+
   return (
     <dialog
       ref={dialogRef}
@@ -45,19 +66,20 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         <div className="flex h-16 items-center justify-between px-5">
           <Logo onClick={onClose} />
           <div className="flex items-center gap-1">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               type="button"
               onClick={onClose}
-              aria-label="关闭导航菜单"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5"
+              aria-label={content.header.menuClose}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5"
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </div>
 
-        <nav className="flex flex-1 flex-col gap-1 px-5 pt-6" aria-label="移动端导航">
+        <nav className="flex flex-1 flex-col gap-1 px-5 pt-6" aria-label={content.header.mobileNav}>
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -87,9 +109,11 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             size="lg"
             className="w-full"
           >
-            免费下载 Android 版
+            {content.hero.downloadCta}
           </ButtonLink>
-          <p className="mt-3 text-center text-xs text-muted">完全免费 · 无账号 · 本地优先</p>
+          <p className="mt-3 text-center text-xs text-muted">
+            {content.trust[0]?.label} · {content.trust[1]?.label} · {content.trust[2]?.label}
+          </p>
         </div>
       </div>
     </dialog>

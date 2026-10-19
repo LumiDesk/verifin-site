@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { useContent } from '../../features/locale/useContent'
+import { useLocale } from '../../features/locale/locale-context'
+import { homePath } from '../../i18n/routing'
 import { cn } from '../../lib/cn'
 
 interface LogoProps {
@@ -7,12 +10,15 @@ interface LogoProps {
 }
 
 export function Logo({ className, onClick }: LogoProps) {
+  const { locale } = useLocale()
+  const content = useContent()
+
   return (
     <Link
-      to="/"
+      to={homePath(locale)}
       onClick={onClick}
-      className={cn('inline-flex items-center gap-2.5', className)}
-      aria-label="Veri Fin 首页"
+      className={cn('inline-flex items-center gap-2.5 whitespace-nowrap', className)}
+      aria-label={content.header.home}
     >
       <img
         src="/brand/verifin-icon.svg"
