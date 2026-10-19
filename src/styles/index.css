@@ -25,8 +25,8 @@
   --color-night-card: var(--night-card);
 
   --font-sans:
-    'Inter Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC',
-    sans-serif;
+    'Inter Variable', 'PingFang SC', 'Hiragino Sans', 'Hiragino Sans GB', 'Yu Gothic',
+    'Microsoft YaHei', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
 
   --radius-card: 1.5rem;
   --radius-panel: 1.75rem;
@@ -106,6 +106,9 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
+    scrollbar-gutter: stable;
+    scrollbar-color: color-mix(in srgb, var(--muted) 34%, transparent) transparent;
+    scrollbar-width: thin;
     color-scheme: light;
   }
 
@@ -118,6 +121,37 @@
     margin: 0;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--muted) 34%, transparent);
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--muted) 54%, transparent);
+    background-clip: content-box;
   }
 
   ::selection {
@@ -157,6 +191,106 @@ details[open] .faq-chevron {
   transform: rotate(180deg);
 }
 
+details[open] > p {
+  animation: faq-in 180ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.screens-rail {
+  overscroll-behavior-x: contain;
+  scrollbar-color: color-mix(in srgb, var(--muted) 24%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+.screens-rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.screens-rail::-webkit-scrollbar-thumb {
+  border: 0;
+  background: color-mix(in srgb, var(--muted) 24%, transparent);
+}
+
+.menu-pop {
+  transform-origin: top right;
+  animation: menu-pop 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.screenshot-outgoing {
+  animation: screenshot-out 300ms ease-out forwards;
+  pointer-events: none;
+}
+
+.image-skeleton {
+  overflow: hidden;
+}
+
+.image-skeleton::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(
+    105deg,
+    transparent 28%,
+    rgb(255 255 255 / 0.08) 46%,
+    transparent 64%
+  );
+  transform: translateX(-100%);
+  animation: image-shimmer 1.4s ease-in-out infinite;
+}
+
+dialog[open] {
+  animation: dialog-in 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+dialog[open]::backdrop {
+  animation: backdrop-in 220ms ease-out;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes menu-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+@keyframes screenshot-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes image-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -169,5 +303,10 @@ details[open] .faq-chevron {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
   }
 }
