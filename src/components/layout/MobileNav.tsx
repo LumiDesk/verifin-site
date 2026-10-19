@@ -5,7 +5,7 @@ import { site } from '../../content/site'
 import { useContent } from '../../features/locale/useContent'
 import { useLocale } from '../../features/locale/locale-context'
 import { homePath } from '../../i18n/routing'
-import { ButtonLink } from '../ui/Button'
+import { buttonStyles } from '../ui/button-styles'
 import { LanguageToggle } from '../ui/LanguageToggle'
 import { Logo } from '../ui/Logo'
 import { ThemeToggle } from '../ui/ThemeToggle'
@@ -102,15 +102,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </nav>
 
         <div className="border-t border-line p-5">
-          <ButtonLink
-            href={site.releases}
-            target="_blank"
-            rel="noreferrer"
-            size="lg"
-            className="w-full"
+          <Link
+            to={`${home}#download`}
+            onClick={onClose}
+            className={buttonStyles({ size: 'lg', className: 'w-full' })}
           >
             {content.hero.downloadCta}
-          </ButtonLink>
+          </Link>
           <p className="mt-3 text-center text-xs text-muted">
             {content.trust[0]?.label} · {content.trust[1]?.label} · {content.trust[2]?.label}
           </p>

@@ -15,9 +15,6 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 export function Section({ tone = 'canvas', className, ...props }: SectionProps) {
   return (
-    <section
-      className={cn('scroll-mt-24 py-20 sm:py-24 lg:py-32', toneClasses[tone], className)}
-      {...props}
-    />
+    <section className={cn('py-20 sm:py-24 lg:py-32', toneClasses[tone], className)} {...props} />
   )
 }

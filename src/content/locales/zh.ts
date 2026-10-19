@@ -29,6 +29,9 @@ export const zh = {
     menuOpen: '打开导航菜单',
     menuClose: '关闭导航菜单',
   },
+  a11y: {
+    scrollbar: '页面滚动条',
+  },
   theme: {
     label: '主题',
     settings: '主题设置',
@@ -231,9 +234,6 @@ export const zh = {
     titleLead: '你的下一本账，',
     titleAccent: '从这里开始。',
     description: '完全免费，下载即用。无需注册，也没有广告；账本从第一天起就保存在你自己的手机里。',
-    primary: '下载最新 APK',
-    primaryFallback: '前往 GitHub Releases',
-    all: '查看全部版本',
     loadingShort: '读取中…',
     versionLoading: '正在获取最新稳定版…',
     versionError: '暂时无法读取版本信息，仍可前往 GitHub 下载。',
@@ -247,6 +247,28 @@ export const zh = {
     },
     archValue: 'arm64-v8a',
     note: 'GitHub 自分发版只提供 arm64-v8a APK；极老的 32 位设备无法安装。',
+    sourcesEyebrow: '下载来源',
+    sourcesTitle: '选一个更顺手的入口。',
+    sourcesHint: '同一款 Veri Fin，两种获取方式',
+    sources: [
+      {
+        id: 'pgyer',
+        label: '国内下载',
+        meta: '中国 · 蒲公英',
+        description: '面向国内网络的分发页，访问和下载通常更顺畅。',
+        cta: '前往国内下载',
+        badge: '国内更快',
+      },
+      {
+        id: 'github',
+        label: 'GitHub Releases',
+        meta: '全球 · 官方构建',
+        description: '直接查看版本发布与 APK，适合能稳定访问 GitHub 的用户。',
+        cta: '前往 GitHub',
+      },
+    ],
+    sourcesNote:
+      '国内入口由蒲公英提供安装页；版本、安装包与页面说明以对应来源为准。更多下载来源会陆续补充。',
   },
   footer: {
     description: '完全免费、无账号、本地优先的 Android 记账应用。你的账本，保存在你自己的手机里。',

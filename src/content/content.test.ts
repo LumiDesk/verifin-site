@@ -11,6 +11,8 @@ describe.each(locales)('%s content', (locale) => {
     expect(content.screens.items).toHaveLength(3)
     expect(content.faq.items).toHaveLength(8)
     expect(content.footer.links.privacy.length).toBeGreaterThan(0)
+    expect(content.download.sources.map((source) => source.id)).toContain('pgyer')
+    expect(content.download.sources.length).toBeGreaterThanOrEqual(2)
   })
 
   it('keeps both legal documents complete', () => {

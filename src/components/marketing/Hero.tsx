@@ -1,5 +1,4 @@
 import { ArrowDown, Coins, Database, Download, ShieldCheck } from 'lucide-react'
-import { site } from '../../content/site'
 import { useContent } from '../../features/locale/useContent'
 import { useLocale } from '../../features/locale/locale-context'
 import { useTheme } from '../../features/theme/theme-context'
@@ -93,7 +92,7 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={site.releases} target="_blank" rel="noreferrer" size="lg">
+              <ButtonLink href={`${homePath(locale)}#download`} size="lg">
                 <Download className="h-4 w-4" aria-hidden="true" />
                 {content.hero.downloadCta}
               </ButtonLink>

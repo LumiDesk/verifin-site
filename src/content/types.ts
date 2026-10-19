@@ -40,6 +40,17 @@ export interface LegalDocument {
   }>
 }
 
+export type DownloadSourceId = 'pgyer' | 'github'
+
+export interface DownloadSource {
+  id: DownloadSourceId
+  label: string
+  meta: string
+  description: string
+  cta: string
+  badge?: string
+}
+
 export interface SiteContent {
   meta: {
     home: PageMeta
@@ -61,6 +72,9 @@ export interface SiteContent {
     download: string
     menuOpen: string
     menuClose: string
+  }
+  a11y: {
+    scrollbar: string
   }
   theme: {
     label: string
@@ -156,9 +170,6 @@ export interface SiteContent {
     titleLead: string
     titleAccent: string
     description: string
-    primary: string
-    primaryFallback: string
-    all: string
     loadingShort: string
     versionLoading: string
     versionError: string
@@ -172,6 +183,11 @@ export interface SiteContent {
     }
     archValue: string
     note: string
+    sourcesEyebrow: string
+    sourcesTitle: string
+    sourcesHint: string
+    sources: DownloadSource[]
+    sourcesNote: string
   }
   footer: {
     description: string

@@ -30,6 +30,9 @@ export const ja = {
     menuOpen: 'ナビゲーションメニューを開く',
     menuClose: 'ナビゲーションメニューを閉じる',
   },
+  a11y: {
+    scrollbar: 'ページスクロールバー',
+  },
   theme: {
     label: 'テーマ',
     settings: 'テーマ設定',
@@ -238,9 +241,6 @@ export const ja = {
     titleAccent: 'ここから始まる。',
     description:
       '完全無料ですぐ使えます。登録も広告もありません。初日から帳簿はあなたのスマートフォン内にあります。',
-    primary: '最新APKをダウンロード',
-    primaryFallback: 'GitHub Releasesへ',
-    all: 'すべてのバージョン',
     loadingShort: '取得中…',
     versionLoading: '最新の安定版を取得しています…',
     versionError: '現在バージョン情報を取得できません。GitHubからダウンロードできます。',
@@ -254,6 +254,28 @@ export const ja = {
     },
     archValue: 'arm64-v8a',
     note: 'GitHubで自主配布しているビルドはarm64-v8a APKのみです。非常に古い32ビット端末にはインストールできません。',
+    sourcesEyebrow: 'ダウンロード元',
+    sourcesTitle: '環境に合った入口を選ぶ。',
+    sourcesHint: '同じ Veri Fin を、2つの方法で',
+    sources: [
+      {
+        id: 'github',
+        label: 'GitHub Releases',
+        meta: 'グローバル · 公式ビルド',
+        description: 'GitHubでリリースとAPKを直接確認できます。',
+        cta: 'GitHubを開く',
+      },
+      {
+        id: 'pgyer',
+        label: '中国国内ダウンロード',
+        meta: '中国 · Pgyer',
+        description: '中国国内のネットワーク向け配布ページ。通常よりスムーズにアクセスできます。',
+        cta: 'Pgyerを開く',
+        badge: '国内向け',
+      },
+    ],
+    sourcesNote:
+      '中国国内の入口はPgyerの配布ページです。バージョンとパッケージの詳細は各配布元の表示を優先してください。ダウンロード元は今後追加される予定です。',
   },
   footer: {
     description:

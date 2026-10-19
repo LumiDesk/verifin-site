@@ -8,5 +8,6 @@ export const site = {
   latestRelease: 'https://github.com/LumiDesk/verifin/releases/latest',
   issues: 'https://github.com/LumiDesk/verifin/issues',
   afdian: 'https://afdian.com/a/talyra42',
+  pgyer: 'https://www.pgyer.com/verifin',
   license: 'GPL-3.0-or-later',
 } as const

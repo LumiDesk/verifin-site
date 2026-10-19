@@ -6,7 +6,7 @@ import { useContent } from '../../features/locale/useContent'
 import { useLocale } from '../../features/locale/locale-context'
 import { homePath } from '../../i18n/routing'
 import { cn } from '../../lib/cn'
-import { ButtonLink } from '../ui/Button'
+import { buttonStyles } from '../ui/button-styles'
 import { Container } from '../ui/Container'
 import { GitHubIcon } from '../ui/GitHubIcon'
 import { LanguageToggle } from '../ui/LanguageToggle'
@@ -73,23 +73,20 @@ export function Header() {
             >
               <GitHubIcon className="h-[1.1rem] w-[1.1rem]" />
             </a>
-            <ButtonLink href={site.releases} target="_blank" rel="noreferrer" size="sm">
+            <Link to={`${home}#download`} className={buttonStyles({ size: 'sm' })}>
               {content.header.download}
-            </ButtonLink>
+            </Link>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageToggle />
             <ThemeToggle />
-            <ButtonLink
-              href={site.releases}
-              target="_blank"
-              rel="noreferrer"
-              size="sm"
-              className="hidden sm:inline-flex"
+            <Link
+              to={`${home}#download`}
+              className={buttonStyles({ size: 'sm', className: 'hidden sm:inline-flex' })}
             >
               {content.nav.download}
-            </ButtonLink>
+            </Link>
             <button
               type="button"
               onClick={() => setMenuOpen(true)}

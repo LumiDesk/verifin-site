@@ -30,6 +30,9 @@ export const en = {
     menuOpen: 'Open navigation menu',
     menuClose: 'Close navigation menu',
   },
+  a11y: {
+    scrollbar: 'Page scrollbar',
+  },
   theme: {
     label: 'Theme',
     settings: 'Theme settings',
@@ -245,9 +248,6 @@ export const en = {
     titleAccent: 'starts here.',
     description:
       'Completely free and ready to use. No sign-up and no ads; from day one, your ledger stays on your phone.',
-    primary: 'Download latest APK',
-    primaryFallback: 'Go to GitHub Releases',
-    all: 'See all versions',
     loadingShort: 'Loading…',
     versionLoading: 'Fetching the latest stable release…',
     versionError:
@@ -262,6 +262,28 @@ export const en = {
     },
     archValue: 'arm64-v8a',
     note: 'GitHub self-distributed builds provide only arm64-v8a APKs. Very old 32-bit devices cannot install them.',
+    sourcesEyebrow: 'Download sources',
+    sourcesTitle: 'Pick the route that fits your network.',
+    sourcesHint: 'The same Veri Fin, two ways to get it',
+    sources: [
+      {
+        id: 'github',
+        label: 'GitHub Releases',
+        meta: 'Global · Official builds',
+        description: 'Browse releases and APKs directly on GitHub.',
+        cta: 'Open GitHub',
+      },
+      {
+        id: 'pgyer',
+        label: 'Download in China',
+        meta: 'China · Pgyer',
+        description: 'A distribution page for networks in China, usually with faster access.',
+        cta: 'Open Pgyer',
+        badge: 'Faster in China',
+      },
+    ],
+    sourcesNote:
+      'Pgyer provides the download page for the China entry. Version and package details on each source remain authoritative. More download sources will be added over time.',
   },
   footer: {
     description:
